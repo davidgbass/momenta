@@ -122,6 +122,15 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
 .tl{display:flex;gap:20px;padding:18px 22px;background:var(--card);border:var(--border);border-radius:12px;align-items:flex-start}
 .tl-when{font-size:12px;font-weight:700;color:var(--accent);white-space:nowrap;padding-top:1px;min-width:100px}
 .tl-what{font-size:14px;color:var(--text2);line-height:1.65}
+.mention{padding:48px 0 40px}
+.mention-box{max-width:var(--max);margin:0 auto;padding:0 48px}
+.mention-inner{padding:32px 36px;border:1px solid rgba(255,255,255,.15);border-left:3px solid rgba(255,255,255,.3);border-radius:var(--r);background:rgba(255,255,255,.03)}
+.mention-eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px}
+.mention-title{font-family:'Fraunces',Georgia,serif;font-size:1.1rem;font-weight:300;color:rgba(255,255,255,.6);margin-bottom:16px;letter-spacing:-.01em}
+.mention-body{font-size:13.5px;color:rgba(255,255,255,.4);line-height:1.8}
+.mention-body p+p{margin-top:12px}
+.mention-body em{font-style:italic;color:rgba(255,255,255,.5)}
+@media(max-width:767px){.mention-box{padding:0 20px}.mention-inner{padding:22px 20px}}
 .footer{border-top:var(--border);padding:28px 48px;display:flex;align-items:center;justify-content:space-between}
 .footer-logo{font-weight:600;font-size:14px;color:var(--text)}
 .footer-logo span{color:var(--accent)}
@@ -545,6 +554,20 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
     </div>
   </div>
 </section>
+
+<div class="mention">
+  <div class="mention-box">
+    <div class="mention-inner">
+      <div class="mention-eyebrow">Note préventive</div>
+      <div class="mention-title">L'équilibre reste la boussole.</div>
+      <div class="mention-body">
+        <p>Les outils d'IA puissants — comme ce qu'on met en place ici — sont réputés pour être extrêmement stimulants. Cette stimulation est réelle, et elle est utile. Mais elle peut aussi alimenter ce qu'on appelle de plus en plus l'<em>IA burnout</em> : l'impression qu'il faut tout automatiser, tout optimiser, tout maintenant.</p>
+        <p>Ce n'est pas l'objectif. Ces outils sont là pour accélérer tes processus et améliorer la qualité de tes décisions — pas pour devenir un puits sans fond qui empiète sur ta vie en dehors du travail.</p>
+        <p>L'équilibre travail-famille reste l'objectif ultime. Si à un moment ce système alimente l'anxiété plutôt que la clarté, c'est le signal pour lever le pied — pas pour aller plus vite.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer class="footer">
   <span class="footer-logo">momenta<span>.</span></span>
