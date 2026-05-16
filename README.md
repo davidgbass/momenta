@@ -26,4 +26,4 @@ Système d'intelligence marketing pour Marie-Claude Viau — automatisation des 
 
 ## Voir le plan complet
 
-→ [plan-momenta-v3.html](./plan-momenta-v3.html)
+→ [Voir le plan](./index.html)
