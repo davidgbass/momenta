@@ -161,7 +161,13 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
 .comite-card h4{font-size:13px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
 .comite-card p{font-size:13.5px;color:var(--text2);line-height:1.65}
 .comite-quote{padding:28px 36px;border-left:3px solid var(--accent);font-size:15px;color:var(--text2);line-height:1.75;font-style:italic}
-@media(max-width:767px){.future-card,.future-gate{padding:24px 20px}.comite-cards{grid-template-columns:1fr}.comite-card{padding:20px}.comite-quote{padding:20px 24px}}
+.agents-intro{font-size:15px;color:var(--text2);line-height:1.75;margin:36px 0 24px}
+.agents-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:36px}
+.agent-card{padding:22px 24px;background:rgba(255,255,255,.05);border:var(--border);border-radius:12px}
+.agent-role{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.09em;margin-bottom:6px}
+.agent-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.35}
+.agent-desc{font-size:13.5px;color:var(--text2);line-height:1.65}
+@media(max-width:767px){.future-card,.future-gate{padding:24px 20px}.comite-cards{grid-template-columns:1fr}.comite-card{padding:20px}.comite-quote{padding:20px 24px}.agents-grid{grid-template-columns:1fr}.agent-card{padding:18px 20px}.agent-desc{font-size:14px;line-height:1.7}}
 </style>
 </head>
 <body>
@@ -495,6 +501,70 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
           <h4>Toujours informé</h4>
           <p>Tous les agents partagent la même connaissance de Momenta. Pas de silos. Pas de répétition. Tu expliques une fois — le système retient pour tout le monde.</p>
         </div>
+      </div>
+      <p class="agents-intro">Voici les spécialistes du comité — chacun formé sur la réalité de Momenta, disponible à la demande ou actif en tâche de fond.</p>
+      <div class="agents-grid">
+
+        <div class="agent-card">
+          <div class="agent-role">SEO</div>
+          <div class="agent-title">Visibilité organique</div>
+          <div class="agent-desc">Analyse les mots-clés tapés par les DRH sur Google, optimise tes pages de programme, et te propose chaque semaine le contenu qui capte du trafic qualifié sans budget pub supplémentaire.</div>
+        </div>
+
+        <div class="agent-card">
+          <div class="agent-role">Finances</div>
+          <div class="agent-title">Rentabilité et projections</div>
+          <div class="agent-desc">Calcule ton coût d'acquisition par canal (Meta, LinkedIn, référencement), projette tes revenus selon le pipeline B2B actif, et t'alerte quand une campagne perd de sa rentabilité.</div>
+        </div>
+
+        <div class="agent-card">
+          <div class="agent-role">Stratégie</div>
+          <div class="agent-title">Décisions fondées sur la donnée</div>
+          <div class="agent-desc">Croise les données GHL avec les signaux d'engagement pour identifier qui relancer, quand et avec quel angle. Analyse ta concurrence. Recommande les pivots dans ton offre B2C et B2B.</div>
+        </div>
+
+        <div class="agent-card">
+          <div class="agent-role">Ressources humaines · B2B</div>
+          <div class="agent-title">Argumentaire client sur mesure</div>
+          <div class="agent-desc">Génère des rapports personnalisés pour tes clients DRH : coût réel de l'absentéisme dans leur secteur, ROI estimé d'un programme Momenta, pitch adapté au juridique, à la manufacture, à la santé.</div>
+        </div>
+
+        <div class="agent-card">
+          <div class="agent-role">Copywriting</div>
+          <div class="agent-title">Ta voix, à l'échelle</div>
+          <div class="agent-desc">Rédige séquences d'emails, pages de vente, pitchs et scripts dans ta voix. Adapte le registre : DRH sénior, gestionnaire de terrain, ou participante B2C cherchant à reprendre de l'espace.</div>
+        </div>
+
+        <div class="agent-card">
+          <div class="agent-role">Analytics</div>
+          <div class="agent-title">Ce qui convertit vraiment</div>
+          <div class="agent-desc">Lit tes données Meta Ads, LinkedIn et GHL, isole ce qui génère des inscriptions vs ce qui brûle du budget, et te dit exactement où réallouer ton attention cette semaine.</div>
+        </div>
+
+        <div class="agent-card">
+          <div class="agent-role">Veille marché</div>
+          <div class="agent-title">Ce qui change dans ton secteur</div>
+          <div class="agent-desc">Surveille les tendances en bien-être au travail, les nouvelles obligations RH des employeurs québécois, et les mouvements de tes concurrents. Te briefie chaque lundi sur ce qui est pertinent pour Momenta.</div>
+        </div>
+
+        <div class="agent-card">
+          <div class="agent-role">Service client</div>
+          <div class="agent-title">Suivi sans intervention</div>
+          <div class="agent-desc">Relance les participantes inactives, envoie les rappels et suivis post-programme, détecte les clientes à risque de décrochage avant qu'elles disparaissent — sans que tu aies à intervenir.</div>
+        </div>
+
+        <div class="agent-card">
+          <div class="agent-role">Juridique · Contrats</div>
+          <div class="agent-title">Propositions prêtes à envoyer</div>
+          <div class="agent-desc">Rédige tes propositions commerciales B2B, vérifie la cohérence de tes contrats d'entreprise, et prépare tes CGV. Pas pour remplacer un avocat — pour que tu arrives préparée et que rien ne traîne.</div>
+        </div>
+
+        <div class="agent-card">
+          <div class="agent-role">Formation · Pédagogie</div>
+          <div class="agent-title">Contenu de programme</div>
+          <div class="agent-desc">Structure tes nouveaux modules, génère des exercices pratiques adaptés au contexte de tes participantes, crée des fiches récapitulatives et des outils de suivi pour renforcer l'impact de chaque cohorte.</div>
+        </div>
+
       </div>
       <div class="comite-quote">Ce n'est pas de la science-fiction. C'est ce que ça donne quand un système connaît vraiment une entreprise — et qu'on lui donne le temps de travailler.</div>
     </div>
