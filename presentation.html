@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Momenta × IA — Mai 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:58px}
+body{font-family:'Inter',-apple-system,sans-serif;background:#0c3b36;color:rgba(255,255,255,.95);min-height:100vh;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+strong{font-weight:600}
+code{font-family:ui-monospace,monospace;font-size:.9em;background:rgba(255,255,255,.08);padding:2px 6px;border-radius:4px}
+:root{--accent:#f58f80;--text:rgba(255,255,255,.95);--text2:rgba(255,255,255,.75);--text3:rgba(255,255,255,.45);--card:rgba(255,255,255,.06);--alt:rgba(255,255,255,.04);--border:1px solid rgba(255,255,255,.1);--r:14px;--max:820px}
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:58px;background:rgba(10,50,45,.97);border-bottom:var(--border);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.nav-logo{font-weight:600;font-size:15px;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:13px;color:var(--text3);font-weight:400;transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.nav-badge{background:var(--accent);color:#fff;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:5px 14px;border-radius:99px}
+.nav-burger{display:none;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;padding:12px;margin-right:-12px}
+.nav-burger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.85);border-radius:2px;transition:transform .2s,opacity .2s}
+.nav-burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-overlay{display:none;position:fixed;top:58px;left:0;right:0;bottom:0;background:rgba(8,42,38,.98);z-index:48;padding:36px 28px;flex-direction:column;overflow-y:auto;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-overlay.open{display:flex}
+.nav-overlay a{display:block;color:rgba(255,255,255,.9);font-family:'Fraunces',Georgia,serif;font-size:26px;font-weight:300;letter-spacing:-.02em;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.nav-overlay a:hover{color:var(--accent)}
+.wrap{max-width:var(--max);margin:0 auto;padding:64px 48px}
+.wrap--hero{padding:88px 48px 72px}
+.alt{background:var(--alt)}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.eyebrow::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
+h1.display{font-family:'Fraunces',Georgia,serif;font-size:clamp(3rem,6.5vw,5rem);font-weight:300;line-height:1.05;letter-spacing:-.03em;color:var(--text);margin-bottom:24px}
+h1.display em{color:var(--accent);font-style:italic}
+.lead{font-size:17px;color:var(--text2);max-width:520px;line-height:1.75;margin-bottom:48px}
+h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:300;line-height:1.1;letter-spacing:-.025em;color:var(--text);margin-bottom:14px}
+.sub{font-size:15px;color:var(--text2);line-height:1.75}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);border:var(--border);border-radius:var(--r);overflow:hidden;gap:1px;background:rgba(255,255,255,.1)}
+.metric{padding:22px 18px;background:var(--card)}
+.metric--hi{background:var(--accent)}
+.metric-n{font-family:'Fraunces',serif;font-size:30px;font-weight:500;color:var(--text);line-height:1;margin-bottom:6px}
+.metric--hi .metric-n{color:#fff}
+.metric-l{font-size:12px;color:var(--text3);line-height:1.4}
+.metric--hi .metric-l{color:rgba(255,255,255,.85)}
+.problems{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+.prob{display:flex;gap:20px;padding:22px 24px;background:var(--card);border:var(--border);border-radius:12px}
+.prob-tag{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.06em;flex-shrink:0;padding-top:2px}
+.prob-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.35}
+.prob-desc{font-size:13.5px;color:var(--text2);line-height:1.7}
+.prob-note{margin-top:28px;padding:20px 24px;border-left:3px solid var(--accent);font-size:15px;color:var(--text2);line-height:1.7}
+.ci{max-width:580px;margin-bottom:32px;display:flex;flex-direction:column;gap:16px}
+.ccards{display:flex;flex-direction:column;gap:12px}
+.ccard{display:flex;gap:20px;padding:18px 22px;background:var(--card);border:var(--border);border-radius:12px;align-items:flex-start}
+.ccard-tag{font-size:12px;font-weight:700;color:var(--accent);white-space:nowrap;padding-top:1px;min-width:90px}
+.ccard-body{font-size:14px;color:var(--text2);line-height:1.65}
+.accordion{display:flex;flex-direction:column;margin-top:36px;border:var(--border);border-radius:var(--r);overflow:hidden;background:var(--card)}
+.acc-item{border-bottom:var(--border)}
+.acc-item:last-child{border-bottom:none}
+.acc-btn{width:100%;display:grid;grid-template-columns:32px 1fr auto 16px;gap:16px;padding:20px 24px;background:transparent;border:none;cursor:pointer;text-align:left;align-items:center;color:var(--text);transition:background .15s}
+.acc-btn:hover{background:rgba(255,255,255,.03)}
+.acc-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--accent);font-size:12px;color:var(--accent);font-weight:600;flex-shrink:0}
+.acc-label{font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px}
+.acc-sub{font-size:12px;color:var(--text3)}
+.acc-meta{text-align:right}
+.acc-ml{font-size:11px;color:var(--text3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.acc-mv{font-size:14px;font-weight:600;color:var(--accent)}
+.acc-chev{color:var(--text3);transition:transform .2s;flex-shrink:0}
+.acc-item.open .acc-chev{transform:rotate(180deg)}
+.acc-body{display:none;padding:0 24px 24px;border-top:var(--border)}
+.acc-item.open .acc-body{display:block}
+.acc-body p{font-size:14px;color:var(--text2);line-height:1.75;margin:20px 0 16px}
+.acc-body ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin:0 0 16px}
+.acc-body li{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:var(--text2);line-height:1.65}
+.acc-body li::before{content:'→';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px}
+.acc-steps{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.acc-step{display:flex;gap:14px;align-items:flex-start;font-size:13.5px;color:var(--text2);line-height:1.65}
+.acc-sn{background:var(--accent);color:#fff;width:20px;height:20px;border-radius:50%;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.acc-note{padding:14px 18px;background:rgba(245,143,128,.1);border:1px solid rgba(245,143,128,.25);border-radius:10px;font-size:13.5px;color:var(--text2);line-height:1.65;font-style:italic;margin-top:8px}
+.acc-comment{font-size:13px;color:var(--text3);line-height:1.65;margin-top:12px}
+.tools{margin-top:32px;border:var(--border);border-radius:var(--r);overflow:hidden}
+.tools-head{display:grid;grid-template-columns:1fr 2fr auto;gap:16px;padding:12px 20px;background:rgba(255,255,255,.05);border-bottom:var(--border)}
+.tools-head span{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
+.tools-row{display:grid;grid-template-columns:1fr 2fr auto;gap:16px;padding:16px 20px;align-items:start;border-bottom:var(--border)}
+.tools-row:last-child{border-bottom:none}
+.t-name{font-size:13.5px;font-weight:600;color:var(--text);line-height:1.4}
+.t-desc{font-size:13.5px;color:var(--text2);line-height:1.6}
+.t-cost{font-size:13.5px;font-weight:500;color:var(--accent);white-space:nowrap}
+.tools-foot{padding:16px 20px;background:rgba(255,255,255,.05);border-top:var(--border);display:flex;justify-content:space-between;align-items:center}
+.tools-foot-l{font-size:13px;color:var(--text3)}
+.tools-foot-v{font-size:15px;font-weight:700;color:var(--text)}
+.calcul{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:var(--border);border-radius:var(--r);overflow:hidden;margin-top:32px;background:rgba(255,255,255,.1)}
+.calc-cell{padding:32px 28px;background:var(--card)}
+.calc-cell--hi{background:var(--accent)}
+.calc-lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:20px}
+.calc-cell--hi .calc-lbl{color:rgba(255,255,255,.75)}
+.calc-n{font-family:'Fraunces',serif;font-size:36px;font-weight:500;color:var(--text);line-height:1;margin-bottom:8px}
+.calc-n2{font-family:'Fraunces',serif;font-size:28px;font-weight:500;color:var(--text);line-height:1;margin-bottom:8px;margin-top:24px}
+.calc-sub{font-size:14px;color:var(--text2)}
+.calc-cell--hi .calc-n,.calc-cell--hi .calc-n2{color:#fff}
+.calc-cell--hi .calc-sub{color:rgba(255,255,255,.85)}
+.cg-lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:12px;margin-top:24px}
+.cg-lbl:first-child{margin-top:0}
+.checks{display:flex;flex-direction:column;gap:8px}
+.ci-item{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;border:1px solid rgba(255,255,255,.12);border-radius:10px;cursor:pointer;transition:border-color .15s,background .15s}
+.ci-item.on{border-color:var(--accent);background:rgba(245,143,128,.06)}
+.ci-box{flex-shrink:0;margin-top:2px;width:20px;height:20px;border-radius:6px;border:1.5px solid rgba(255,255,255,.3);background:transparent;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.ci-item.on .ci-box{background:var(--accent);border:none}
+.ci-box svg{display:none}
+.ci-item.on .ci-box svg{display:block}
+.ci-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px}
+.ci-desc{font-size:13px;color:var(--text2);line-height:1.55}
+.confirm{margin-top:20px;padding:16px 20px;border:1px solid var(--accent);border-radius:10px;display:none;font-size:14px;color:var(--text2);line-height:1.65}
+.confirm.show{display:block}
+.confirm strong{color:var(--accent)}
+.cnote{margin-top:24px;font-size:13px;color:var(--text3);line-height:1.65}
+.timeline{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+.tl{display:flex;gap:20px;padding:18px 22px;background:var(--card);border:var(--border);border-radius:12px;align-items:flex-start}
+.tl-when{font-size:12px;font-weight:700;color:var(--accent);white-space:nowrap;padding-top:1px;min-width:100px}
+.tl-what{font-size:14px;color:var(--text2);line-height:1.65}
+.mention{padding:52px 0;background:#b03218}
+.mention-box{max-width:var(--max);margin:0 auto;padding:0 48px}
+.mention-eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:14px}
+.mention-title{font-family:'Fraunces',Georgia,serif;font-size:1.5rem;font-weight:300;color:#fff;margin-bottom:22px;letter-spacing:-.02em}
+.mention-body{font-size:15px;color:rgba(255,255,255,.92);line-height:1.85;max-width:640px}
+.mention-body p+p{margin-top:16px}
+.mention-body em{font-style:italic;color:#fff;font-weight:500}
+@media(max-width:767px){.mention-box{padding:0 20px}.mention{padding:40px 0}}
+.footer{border-top:var(--border);padding:28px 48px;display:flex;align-items:center;justify-content:space-between}
+.footer-logo{font-weight:600;font-size:14px;color:var(--text)}
+.footer-logo span{color:var(--accent)}
+.footer-note{font-size:12px;color:var(--text3)}
+@media(max-width:767px){
+  .nav{padding:0 20px}
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  .wrap{padding:40px 20px}
+  .wrap--hero{padding:56px 20px 44px}
+  .lead{max-width:100%}
+  .metrics{grid-template-columns:1fr 1fr}
+  .acc-btn{grid-template-columns:32px 1fr 16px;gap:12px;padding:16px}
+  .acc-meta{display:none}
+  .acc-body{padding:0 16px 24px}
+  .acc-body p{font-size:15px;line-height:1.8;margin:18px 0 14px}
+  .acc-body ul{gap:10px}
+  .acc-body li{font-size:14px;line-height:1.75}
+  .acc-note{font-size:14px;padding:16px;line-height:1.75}
+  .tools-head{display:none}
+  .tools-row{grid-template-columns:1fr;gap:4px;padding:14px 16px}
+  .calcul{grid-template-columns:1fr}
+  .footer{flex-direction:column;align-items:flex-start;gap:8px;padding:24px 20px}
+}
+
+.src-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0 12px}
+.src-block{padding:14px 16px;background:rgba(255,255,255,.05);border:var(--border);border-radius:10px}
+.src-interview{padding:16px 18px;background:rgba(245,143,128,.07);border:1px solid rgba(245,143,128,.2);border-radius:10px;margin-bottom:20px}
+.src-label{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.src-desc{font-size:13px;color:var(--text2);line-height:1.6}
+@media(max-width:767px){.src-grid{grid-template-columns:1fr;gap:8px}.src-block,.src-interview{padding:14px 16px}}
+.mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.mission-card{padding:32px 36px;background:var(--card);border:var(--border);border-radius:var(--r);position:relative}
+.mission-card--accent{background:rgba(245,143,128,.08);border-color:rgba(245,143,128,.25)}
+.mission-num{font-family:'Fraunces',serif;font-size:36px;font-weight:300;color:rgba(255,255,255,.12);line-height:1;margin-bottom:16px}
+.mission-card--accent .mission-num{color:rgba(245,143,128,.3)}
+.mission-title{font-size:17px;font-weight:600;color:var(--text);margin-bottom:14px;line-height:1.3}
+.mission-card--accent .mission-title{color:var(--accent)}
+.mission-body{font-size:14px;color:var(--text2);line-height:1.75}
+.mission-note{font-size:15px;color:var(--text2);line-height:1.7;padding:20px 24px;border-left:3px solid var(--accent);font-style:italic}
+@media(max-width:767px){.mission-grid{grid-template-columns:1fr}.mission-card{padding:24px 20px}}
+.future{display:flex;flex-direction:column;gap:32px;margin-top:40px}
+.future-card{padding:36px 40px;background:var(--card);border:var(--border);border-radius:var(--r);position:relative;overflow:hidden}
+.future-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
+.future-card h3{font-family:'Fraunces',Georgia,serif;font-size:1.4rem;font-weight:300;letter-spacing:-.02em;color:var(--text);margin-bottom:12px}
+.future-card p{font-size:14px;color:var(--text2);line-height:1.75}
+.future-gate{margin-top:48px;padding:32px 40px;border:1px solid rgba(245,143,128,.35);border-radius:var(--r);background:rgba(245,143,128,.06)}
+.future-gate p{font-size:15px;color:var(--text2);line-height:1.75;font-style:italic}
+.comite{margin-top:40px}
+.comite-lead{font-size:17px;color:var(--text2);line-height:1.75;margin-bottom:32px;max-width:580px}
+.comite-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
+.comite-card{padding:24px 28px;background:var(--card);border:var(--border);border-radius:12px}
+.comite-card h4{font-size:13px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.comite-card p{font-size:13.5px;color:var(--text2);line-height:1.65}
+.comite-quote{padding:28px 36px;border-left:3px solid var(--accent);font-size:15px;color:var(--text2);line-height:1.75;font-style:italic}
+.agents-intro{font-size:14px;color:var(--text2);line-height:1.75;margin:28px 0 16px}
+.agents-cats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:36px}
+.agents-cat{padding:24px 26px;background:rgba(255,255,255,.05);border:var(--border);border-radius:12px}
+.agents-cat-title{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.09em;margin-bottom:6px}
+.agents-cat-sub{font-size:12px;color:var(--text3);font-style:italic;margin-bottom:16px;line-height:1.5}
+.agents-list{display:flex;flex-direction:column;gap:12px}
+.agents-item-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px}
+.agents-item-desc{font-size:13px;color:var(--text2);line-height:1.55}
+@media(max-width:767px){.future-card,.future-gate{padding:24px 20px}.comite-cards{grid-template-columns:1fr}.comite-card{padding:20px}.comite-quote{padding:20px 24px}.agents-cats{grid-template-columns:1fr}.agents-cat{padding:20px}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <span class="nav-logo">momenta<span>.</span></span>
+  <div class="nav-links">
+    <a href="#probleme">Problème</a>
+    <a href="#etapes">Étapes</a>
+    <a href="#outils">Outils</a>
+    <a href="#futur">Ce qui s'ouvre</a>
+    <a href="#approbation">Approbation</a>
+    <span class="nav-badge">Mai 2026</span>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-overlay" id="overlay">
+  <a href="#probleme">Problème</a>
+  <a href="#etapes">Étapes</a>
+  <a href="#outils">Outils</a>
+  <a href="#futur">Ce qui s'ouvre</a>
+  <a href="#approbation">Approbation</a>
+</div>
+
+<section>
+  <div class="wrap wrap--hero">
+    <div class="eyebrow">Momenta × IA — Mai 2026</div>
+    <h1 class="display">Ce qu'on construit<br>pour <em>toi.</em></h1>
+    <p class="lead">Lecture : 5 minutes. Décision : tu approuves ou tu ajustes. On commence cette semaine.</p>
+    <div class="metrics">
+      <div class="metric"><div class="metric-n">15h</div><div class="metric-l">récupérées<br>par semaine</div></div>
+      <div class="metric"><div class="metric-n">30s</div><div class="metric-l">par courriel<br>au lieu de 5–10 min</div></div>
+      <div class="metric metric--hi"><div class="metric-n">1 400</div><div class="metric-l">dormantes prêtes<br>à lancer</div></div>
+      <div class="metric"><div class="metric-n">30$/m</div><div class="metric-l">coût mensuel<br>total net</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="probleme">
+  <div class="wrap">
+    <div class="eyebrow">Le problème</div>
+    <h2 class="h2">Ce qui coûte ton temps en ce moment.</h2>
+    <p class="sub">Tu as déjà trouvé des raccourcis. Le problème, c'est qu'ils ne s'améliorent pas avec le temps.</p>
+    <div class="problems">
+      <div class="prob"><div class="prob-tag">01</div><div><div class="prob-title">Les outils d'IA avec une mémoire limitée</div><div class="prob-desc">Tu obtiens un gain de temps ponctuel, mais le système ne connaît pas Momenta, ne retient rien d'une session à l'autre, et ne s'améliore pas au fil de tes réponses. Le gain reste le même — il ne compose pas.</div></div></div>
+      <div class="prob"><div class="prob-tag">02</div><div><div class="prob-title">La création de contenu est laborieuse</div><div class="prob-desc">Pas surtout à la production, mais en amont — trouver l'idée, décider de l'angle, savoir quoi dire cette semaine. C'est là que le temps disparaît.</div></div></div>
+      <div class="prob"><div class="prob-tag">03</div><div><div class="prob-title">Les 1 400 dormantes sont prêtes à être lancées</div><div class="prob-desc">Mais la stratégie pour le faire est encore floue. Ce n'est pas un manque de volonté, c'est un manque de clarté sur qui, avec quel angle, dans quel ordre.</div></div></div>
+      <div class="prob"><div class="prob-tag">04</div><div><div class="prob-title">Le B2B manque de temps dédié</div><div class="prob-desc">Pas parce que tu ne veux pas — parce que les courriels et le contenu gobent les heures disponibles avant que tu y arrives.</div></div></div>
+      <div class="prob"><div class="prob-tag">05</div><div><div class="prob-title">Ce que tu sais sur Momenta est éparpillé</div><div class="prob-desc">GHL, Excel, ta mémoire, tes outils IA. Aucun de ces endroits ne se parle. Tu es la seule interface entre tous.</div></div></div>
+    </div>
+    <div class="prob-note">Ce n'est pas un problème de discipline. C'est un problème de <strong>mémoire systémique</strong>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">La solution</div>
+    <h2 class="h2">Ce qu'on construit.</h2>
+    <div class="ci">
+      <p class="sub">On ne change pas la structure de Momenta. On ne te demande pas de déléguer ta vision, ton jugement, ou ton sens des affaires.</p>
+      <p class="sub">Ce qu'on fait : on donne à l'intelligence qui existe déjà dans Momenta <strong>un endroit pour vivre et s'accumuler</strong>. Tes données de campagnes, tes contacts, tes pitch decks, tes décisions — tout ça entre dans un système qui s'en souvient et qui s'en sert.</p>
+    </div>
+    <div class="ccards">
+      <div class="ccard"><div class="ccard-tag">Le principe</div><div class="ccard-body"><strong>Ça compound.</strong> Plus le système est nourri, plus il est précis. Une relance générée avec 3 mois de données vaut dix fois plus qu'une relance générée sur des suppositions. Un pitch B2B calibré sur les vraies objections entendues bat n'importe quel template générique.</div></div>
+      <div class="ccard"><div class="ccard-tag">Ton rôle</div><div class="ccard-body">Tu restes la source. Le système amplifie. L'IA accélère les processus — mais <strong>pleinement ancrée dans la réalité de Momenta</strong>, pas sur des généralités. Sa connaissance est alignée sur tes données réelles : pas d'hallucinations, pas d'inférences flatteuses, pas de complaisance. Tu as un système objectif qui challenge tes décisions — pas un outil qui te dit ce que tu veux entendre.</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">La double mission</div>
+    <h2 class="h2">Tu es la stratège. Le système opère.</h2>
+    <p class="sub" style="max-width:560px;margin-bottom:32px">Deux objectifs à tenir en équilibre — l'un libère ton temps, l'autre élève tes décisions.</p>
+    <div class="mission-grid">
+      <div class="mission-card">
+        <div class="mission-num">01</div>
+        <h3 class="mission-title">Automatiser pour libérer</h3>
+        <p class="mission-body">Déléguer au système ce qui ne requiert pas ton jugement : courriels routiniers, production de contenu, suivis, relances. Chaque opération confiée au système est une heure récupérée pour ce qui a de la valeur — la stratégie, les relations, la vente directe.</p>
+      </div>
+      <div class="mission-card mission-card--accent">
+        <div class="mission-num">02</div>
+        <h3 class="mission-title">Décider avec plus d'intelligence</h3>
+        <p class="mission-body">Un système bien nourri ne se contente pas d'exécuter — il analyse, détecte, projette. L'objectif va au-delà du gain de temps : augmenter la qualité de chaque décision stratégique pour maximiser les revenus. Quel segment cibler. Quel angle adopter. Où concentrer l'énergie.</p>
+      </div>
+    </div>
+    <div class="mission-note">L'équilibre entre ces deux objectifs, c'est ce qui transforme un outil IA en véritable levier de croissance pour Momenta.</div>
+  </div>
+</section>
+
+<section class="alt" id="etapes">
+  <div class="wrap">
+    <div class="eyebrow">Les étapes</div>
+    <h2 class="h2">Les 6 étapes.</h2>
+    <p class="sub">De la mise en place initiale à l'automatisation complète — en ordre de priorité.</p>
+    <div class="accordion">
+
+      <div class="acc-item">
+        <button class="acc-btn" onclick="tog(this)">
+          <div class="acc-num">0</div>
+          <div><div class="acc-label">Le wiki Momenta</div><div class="acc-sub">Cette semaine + session Vague 2</div></div>
+          <div class="acc-meta"><div class="acc-ml">Priorité</div><div class="acc-mv">Maintenant</div></div>
+          <svg class="acc-chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="acc-body">
+          <p>Un <strong>Projet Claude dédié</strong> — "Wiki Momenta" — toujours actif, toujours en contexte. Tous les autres outils du système s'y connectent.</p>
+          <div class="src-grid">
+            <div class="src-block">
+              <div class="src-label">GHL</div>
+              <div class="src-desc">1 400 dormantes segmentées, 42 participantes, pipeline B2B, taux d'ouverture par séquence</div>
+            </div>
+            <div class="src-block">
+              <div class="src-label">Meta Ads · LinkedIn</div>
+              <div class="src-desc">Résultats par campagne, coût par conversion, profils qui ont converti</div>
+            </div>
+            <div class="src-block">
+              <div class="src-label">Pitch decks · Brand kit</div>
+              <div class="src-desc">B2C + B2B en PDF, couleurs, polices, logo Momenta</div>
+            </div>
+          </div>
+          <div class="src-interview">
+            <div class="src-label">Entrevue ADN — 1h</div>
+            <div class="src-desc">Claude pose les questions, tu réponds à voix haute (Superwhisper transcrit). Stratégie, cibles, objections réelles, ce qui convainc, ce qui ne convainc jamais. Ce document devient la référence que tous les agents consultent.</div>
+          </div>
+          <div class="acc-note">Résultat concret : <em>« Parmi mes 1 400 dormantes, qui a participé au webinaire sur la charge mentale ET travaille dans le secteur juridique ? »</em> — réponse en 30 secondes.</div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-btn" onclick="tog(this)">
+          <div class="acc-num">1</div>
+          <div><div class="acc-label">Tes courriels</div><div class="acc-sub">Cette semaine, ~1–2h</div></div>
+          <div class="acc-meta"><div class="acc-ml">Impact</div><div class="acc-mv">Immédiat</div></div>
+          <svg class="acc-chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="acc-body">
+          <p>Les composants installés : <strong>Gmail MCP</strong> dans Claude Desktop (Claude lit et crée des brouillons directement dans ta boîte) + <strong>Superwhisper</strong> avec raccourci clavier (⌥Space — tu dictes, il transcrit instantanément).</p>
+          <p>Un skill <strong>"reply-email"</strong> nourri de 5–10 courriels écrits de ta main : il connaît ton registre B2C vs B2B, tes formules habituelles, tes arguments par type de demande.</p>
+          <div class="acc-steps">
+            <div class="acc-step"><div class="acc-sn">1</div>Tu reçois un courriel — tu appuies sur ⌥Space</div>
+            <div class="acc-step"><div class="acc-sn">2</div>Tu dictes le contexte à voix haute : Superwhisper transcrit, Claude reçoit</div>
+            <div class="acc-step"><div class="acc-sn">3</div>Claude génère la réponse dans ta voix, avec les bons arguments, le bon registre</div>
+            <div class="acc-step"><div class="acc-sn">4</div>Le brouillon apparaît dans Gmail via MCP — tu cliques Envoyer. Total : 30 secondes.</div>
+          </div>
+          <div class="acc-comment">Relances routinières : envoi direct, zéro intervention. Pitchs B2B et prospects chauds : tu relis, tu envoies.</div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-btn" onclick="tog(this)">
+          <div class="acc-num">2</div>
+          <div><div class="acc-label">Ton contenu hebdomadaire</div><div class="acc-sub">Session Vague 2, ~3–4h de config</div></div>
+          <div class="acc-meta"><div class="acc-ml">Cadence</div><div class="acc-mv">Hebdomadaire</div></div>
+          <svg class="acc-chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="acc-body">
+          <p>Les composants : <strong>Canva MCP</strong> dans Claude Desktop (Claude crée des visuels directement dans ton compte Canva) + <strong>templates Momenta</strong> pré-configurés pour chaque format (IG feed, IG story, LinkedIn, Facebook) aux couleurs de ton brand kit.</p>
+          <p>Un skill <strong>"write-content"</strong> calibré sur ta voix et ton calendrier éditorial. Tu dictes 2–3 mots d'intention le lundi matin — il génère les textes de la semaine, adapte le ton par plateforme, crée les visuels dans Canva et schedule tout via Canva Content Planner.</p>
+          <div class="acc-steps">
+            <div class="acc-step"><div class="acc-sn">1</div>Lundi matin : tu lances <code>write-content</code> et dictes le thème de la semaine</div>
+            <div class="acc-step"><div class="acc-sn">2</div>Claude génère les textes IG + LinkedIn + FB dans ta voix</div>
+            <div class="acc-step"><div class="acc-sn">3</div>Canva MCP crée les visuels aux couleurs Momenta automatiquement</div>
+            <div class="acc-step"><div class="acc-sn">4</div>Canva Content Planner schedule tout → semaine publiée, sans retouche</div>
+          </div>
+          <div class="acc-comment">Config ensemble : brand kit Canva (30 min) + interview voix (1h) + test complet avec validation (45 min).</div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-btn" onclick="tog(this)">
+          <div class="acc-num">3</div>
+          <div><div class="acc-label">GHL enrichi</div><div class="acc-sub">Mois 2, infrastructure automatique</div></div>
+          <div class="acc-meta"><div class="acc-ml">Effort</div><div class="acc-mv">0 de ton côté</div></div>
+          <svg class="acc-chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="acc-body">
+          <p>Un <strong>MCP GHL</strong> installé dans Claude Desktop connecte directement tes fiches contacts au wiki Momenta — sans plateforme d'automatisation tierce. Depuis Claude Desktop, tu demandes le briefing d'un contact : Claude interroge GHL, croise avec le wiki, et pousse la note directement dans la fiche.</p>
+          <p>Ce qui apparaît dans la fiche à la demande :</p>
+          <ul>
+            <li><strong>L'angle recommandé</strong> pour la conversation selon le profil et le secteur</li>
+            <li><strong>L'historique complet</strong> de la relation (interactions passées, ce qui a été dit)</li>
+            <li><strong>La prochaine étape suggérée</strong> et les objections probables à anticiper</li>
+          </ul>
+          <div class="acc-comment">Tu ouvres GHL — le briefing est déjà là. Zéro préparation manuelle.</div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-btn" onclick="tog(this)">
+          <div class="acc-num">4</div>
+          <div><div class="acc-label">Tes réunions B2B capturées</div><div class="acc-sub">Mois 3+, ~30 min de config</div></div>
+          <div class="acc-meta"><div class="acc-ml">Timing</div><div class="acc-mv">Mois 3+</div></div>
+          <svg class="acc-chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="acc-body">
+          <p><strong>MacWhisper Pro</strong> sur ton Mac : transcription locale après chaque appel, privée, sans cloud. Le fichier audio ne quitte jamais ton ordinateur.</p>
+          <p>Après la réunion, tu lances le skill <strong>"process-meeting"</strong> avec le fichier de transcription. Claude lit, analyse et extrait :</p>
+          <ul>
+            <li><strong>Les décisions prises</strong> et les engagements des deux parties</li>
+            <li><strong>Tes tâches</strong> avec les échéances mentionnées</li>
+            <li><strong>Les signaux d'achat détectés</strong> (budget évoqué, urgence, objections résolues)</li>
+            <li><strong>Le stade GHL mis à jour</strong> automatiquement selon l'avancement réel</li>
+          </ul>
+          <div class="acc-comment">Tu rentres d'un appel — le wiki est à jour, GHL est à jour, les tâches sont dans le système. Le travail administratif est déjà fait.</div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-btn" onclick="tog(this)">
+          <div class="acc-num">5</div>
+          <div><div class="acc-label">Tes documents partageables en ligne</div><div class="acc-sub">Mois 2, ~30 min pour toi</div></div>
+          <div class="acc-meta"><div class="acc-ml">Effort</div><div class="acc-mv">30 min</div></div>
+          <svg class="acc-chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="acc-body">
+          <p>Compte <strong>GitHub "momenta-mc"</strong> créé (gratuit). Un skill Claude <strong>"build-page"</strong> prend ton pitch deck en PDF et génère automatiquement une page web responsive aux couleurs Momenta — sans code, sans intervention manuelle.</p>
+          <div class="acc-steps">
+            <div class="acc-step"><div class="acc-sn">1</div>Tu fournis le PDF — le skill génère la page HTML aux couleurs Momenta</div>
+            <div class="acc-step"><div class="acc-sn">2</div>La page est publiée sur GitHub Pages : <code>momenta-mc.github.io/essor/</code> (DRH) et <code>momenta-mc.github.io/pitch/</code> (grand public)</div>
+            <div class="acc-step"><div class="acc-sn">3</div>Tu valides sur ton téléphone — c'est prêt à envoyer</div>
+            <div class="acc-step"><div class="acc-sn">4</div>Mise à jour de l'offre : nouveau PDF → skill régénère → même URLs, contenu à jour instantanément</div>
+          </div>
+          <div class="acc-note">La DRH ouvre le lien sur son téléphone pendant le meeting. Elle ne télécharge rien, pas besoin de compte. L'URL ne change jamais — tu n'as plus jamais à renvoyer de fichier.</div>
+          <div class="acc-comment">Ce que ça te coûte : 30 min pour valider. Hébergement : 0 $.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="outils">
+  <div class="wrap">
+    <div class="eyebrow">Les outils</div>
+    <h2 class="h2">En clair.</h2>
+    <div class="tools">
+      <div class="tools-head"><span>Outil</span><span>Ce que tu fais avec</span><span>Coût</span></div>
+      <div class="tools-row"><div class="t-name">Claude Desktop (Cowork)</div><div class="t-desc">Courriels, contenu, questions au wiki — ton outil quotidien sur Mac</div><div class="t-cost">Inclus Claude Pro</div></div>
+      <div class="tools-row"><div class="t-name">Claude Pro</div><div class="t-desc">Accès au système</div><div class="t-cost">20 $/mois</div></div>
+      <div class="tools-row"><div class="t-name">Superwhisper</div><div class="t-desc">Tu parles, ça écrit (français québécois, haute qualité)</div><div class="t-cost">8 $/mois</div></div>
+      <div class="tools-row"><div class="t-name">Canva Pro + MCP</div><div class="t-desc">Visuels aux couleurs Momenta générés automatiquement</div><div class="t-cost">~17 $/mois</div></div>
+      <div class="tools-row"><div class="t-name">MacWhisper Pro</div><div class="t-desc">Transcription locale de tes réunions B2B</div><div class="t-cost">59 € une fois</div></div>
+      <div class="tools-row"><div class="t-name">Gmail MCP</div><div class="t-desc">Claude envoie les brouillons directement dans ta boîte</div><div class="t-cost">Gratuit</div></div>
+      <div class="tools-row"><div class="t-name">GitHub Pages</div><div class="t-desc">Hébergement de tes pitch decks et one-pagers — URL propre, responsive, toujours à jour</div><div class="t-cost">Gratuit</div></div>
+      <div class="tools-foot"><span class="tools-foot-l">Total mensuel net</span><span class="tools-foot-v">~30 $/mois + 59 € une fois</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Le calcul</div>
+    <h2 class="h2">Ce que tu investis vs. ce que tu récupères.</h2>
+    <div class="calcul">
+      <div class="calc-cell">
+        <div class="calc-lbl">Ce que tu investis</div>
+        <div class="calc-n">~15h</div><div class="calc-sub">courbe d'apprentissage initiale</div>
+        <div class="calc-n2">~5h / sem.</div><div class="calc-sub">pendant les 3 premiers mois</div>
+        <div class="calc-n2">30 $/mois</div><div class="calc-sub">+ 59 € une fois</div>
+      </div>
+      <div class="calc-cell calc-cell--hi">
+        <div class="calc-lbl">Ce que tu récupères</div>
+        <div class="calc-n">~15h</div><div class="calc-sub">par semaine</div>
+        <div class="calc-n2">Temps pour vendre</div><div class="calc-sub">pas pour administrer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approbation">
+  <div class="wrap">
+    <div class="eyebrow">Approbation</div>
+    <h2 class="h2">Ce qu'on te demande.</h2>
+    <p class="sub" style="max-width:500px;margin-bottom:32px">Coche les étapes que tu approuves. Ce n'est pas un engagement définitif — c'est une direction.</p>
+
+    <div class="cg-lbl" style="margin-top:0">Cette semaine — Étapes 0 + 1</div>
+    <div class="checks">
+      <div class="ci-item" onclick="chk(this)"><div class="ci-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="ci-title">Étape 0 — Je transmets la clé API GHL et je bloque l'entrevue d'1h.</div><div class="ci-desc">GHL → Settings → API Keys, 2 min. L'entrevue : Claude te pose les questions, tu réponds à voix haute. C'est la mémoire de base du système.</div></div></div>
+      <div class="ci-item" onclick="chk(this)"><div class="ci-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="ci-title">Étape 1 — Je bloque 1–2h et je prépare 5–10 courriels écrits de ma main.</div><div class="ci-desc">Pour apprendre ta voix au système. 5 courriels suffisent — ceux que tu as déjà envoyés.</div></div></div>
+    </div>
+
+    <div class="cg-lbl">Session Vague 2 — Étapes 0 (suite) + 2</div>
+    <div class="checks">
+      <div class="ci-item" onclick="chk(this)"><div class="ci-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="ci-title">Je bloque une demi-journée et j'apporte les données.</div><div class="ci-desc">Meta Ads + LinkedIn Analytics en CSV, brand kit Canva, pitch decks B2C + B2B en PDF. David configure le reste.</div></div></div>
+    </div>
+
+    <div class="cg-lbl">Mois 2 — David s'en charge, aucun temps de ta part</div>
+    <div class="checks">
+      <div class="ci-item" onclick="chk(this)"><div class="ci-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="ci-title">Étape 3 — GHL enrichi avec le contexte du wiki.</div><div class="ci-desc">Chaque fiche contact GHL affiche l'angle recommandé, l'historique et la prochaine étape — automatiquement.</div></div></div>
+      <div class="ci-item" onclick="chk(this)"><div class="ci-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="ci-title">Étape 5 — Pitch decks et one-pager en ligne sur URL propre.</div><div class="ci-desc">Tu envoies un lien au lieu d'une pièce jointe. Toujours à jour, responsive, hébergement gratuit.</div></div></div>
+    </div>
+
+    <div class="cg-lbl">Dès que le pipeline B2B est actif — Étape 4</div>
+    <div class="checks">
+      <div class="ci-item" onclick="chk(this)"><div class="ci-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="ci-title">Étape 4 — Réunions B2B capturées et intégrées au système.</div><div class="ci-desc">30 min de config, puis automatique. Chaque réunion nourrit le wiki sans intervention de ta part.</div></div></div>
+    </div>
+
+    <div class="confirm" id="confirm"><strong>Approuvée — David peut démarrer.</strong> Tu peux ajuster à tout moment.</div>
+    <p class="cnote">On commence par ce qui débloque le plus vite — les courriels et les données GHL — et on avance en parallèle de tes opérations.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Ce qui change</div>
+    <h2 class="h2">Concrètement.</h2>
+    <div class="timeline">
+      <div class="tl"><div class="tl-when">Dans 2 semaines</div><div class="tl-what">Tes courriels prennent 30 secondes. Tu n'expliques plus Momenta à chaque fois.</div></div>
+      <div class="tl"><div class="tl-when">Dans 1 mois</div><div class="tl-what">Ton contenu de la semaine est produit le lundi matin. Tu sais exactement quels segments de tes dormantes lancer et avec quel angle. Ton pitch B2B est en ligne — tu envoies un lien au lieu d'une pièce jointe.</div></div>
+      <div class="tl"><div class="tl-when">Dans 3 mois</div><div class="tl-what">Chaque réunion B2B nourrit automatiquement le système. Tu rentres d'un appel, les tâches sont déjà dans le wiki.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="futur">
+  <div class="wrap">
+    <div class="eyebrow">Ce qui s'ouvre après la maturité</div>
+    <h2 class="h2">Quand le système a eu le temps d'apprendre.</h2>
+    <p class="sub" style="max-width:560px">La plupart des outils IA font la même chose au mois 1 qu'au mois 6. Ce système, non. À partir de 3–4 mois d'utilisation, un seuil se franchit. Ce n'est plus de l'accélération — c'est une transformation.</p>
+    <div class="future">
+      <div class="future-card">
+        <h3>Le système sait qui va convertir avant que tu l'aies contacté.</h3>
+        <p>Qui ouvre deux courriels sur trois, qui a visité la page programme trois fois cette semaine, qui a répondu à un post LinkedIn et cliqué sur le lien. Le système croise ces signaux et te donne chaque lundi une liste des 5 personnes à qui écrire. Pas par intuition — par reconnaissance de patterns que tu ne pourrais pas voir toi-même.</p>
+      </div>
+      <div class="future-card">
+        <h3>Tes dormantes se lancent avec un angle personnalisé pour chaque segment.</h3>
+        <p>Les DRH du juridique → argument rétention. Les gestionnaires en manufac → coût de l'absentéisme. Les anciennes participantes B2C → levier de référencement B2B. Le système génère les batches dans ta voix, avec les bons arguments, au bon moment.</p>
+      </div>
+      <div class="future-card">
+        <h3>Tu sais ce que le mois prochain va rapporter.</h3>
+        <p>Après chaque réunion B2B, le pipeline se met à jour. Le système lit les signaux — deuxième contact, demande de proposition, silence après deux relances — et te donne une probabilité de conversion et une projection de revenu. Pas de l'optimisme. De la data.</p>
+      </div>
+      <div class="future-card">
+        <h3>Ton contenu devient auto-apprenant.</h3>
+        <p>Le système sait ce qui performe sur LinkedIn vs IG, quel angle génère des DM, quel format convertit pour les prospects B2B. Il ajuste les angles de la semaine automatiquement — le lundi matin, le brief tient déjà compte de la semaine précédente.</p>
+      </div>
+    </div>
+    <div class="future-gate">
+      <p>Tout ça ne s'installe pas. Ça se gagne — par le temps passé à nourrir le système et à le laisser observer Momenta. C'est pourquoi on commence maintenant.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">L'étape ultime</div>
+    <h2 class="h2">Maturité du système : le comité aviseur.</h2>
+    <div class="comite">
+      <p class="comite-lead">Un comité qui connaît Momenta mieux que n'importe quel consultant externe — et qui travaille pendant que tu dors. La nuit il analyse, le matin le briefing est prêt, et chaque décision est éclairée par le même système. Tu expliques une fois — il retient pour tout le monde.</p>
+      <p class="agents-intro">Les spécialistes du comité — chacun formé sur la réalité de Momenta :</p>
+      <div class="agents-cats">
+
+        <div class="agents-cat">
+          <div class="agents-cat-title">Croissance &amp; visibilité</div>
+          <div class="agents-cat-sub">Actif la nuit — résultats prêts le matin.</div>
+          <div class="agents-list">
+            <div><div class="agents-item-name">SEO</div><div class="agents-item-desc">Mots-clés DRH, optimisation pages de programme, trafic organique sans budget pub.</div></div>
+            <div><div class="agents-item-name">Analytics</div><div class="agents-item-desc">Isole ce qui convertit vs ce qui brûle du budget sur Meta, LinkedIn et GHL.</div></div>
+            <div><div class="agents-item-name">Veille marché</div><div class="agents-item-desc">Tendances bien-être, obligations RH québécoises, mouvements de tes concurrents — briefing hebdo.</div></div>
+          </div>
+        </div>
+
+        <div class="agents-cat">
+          <div class="agents-cat-title">Ventes &amp; B2B</div>
+          <div class="agents-cat-sub">Éclaire chaque décision avec le contexte réel de Momenta.</div>
+          <div class="agents-list">
+            <div><div class="agents-item-name">Stratégie</div><div class="agents-item-desc">Croise GHL + signaux d'engagement pour savoir qui relancer, quand, et avec quel angle.</div></div>
+            <div><div class="agents-item-name">Ressources humaines</div><div class="agents-item-desc">ROI par secteur (juridique, manufacture, santé), pitch adapté au profil DRH, rapports sur mesure.</div></div>
+            <div><div class="agents-item-name">Juridique &amp; contrats</div><div class="agents-item-desc">Propositions commerciales, cohérence des contrats B2B, CGV — prêts à envoyer.</div></div>
+          </div>
+        </div>
+
+        <div class="agents-cat">
+          <div class="agents-cat-title">Communication</div>
+          <div class="agents-cat-sub">Tu n'arrives jamais à zéro — le briefing est déjà prêt.</div>
+          <div class="agents-list">
+            <div><div class="agents-item-name">Copywriting</div><div class="agents-item-desc">Séquences, pages de vente, pitchs dans ta voix — registre adapté à chaque cible.</div></div>
+            <div><div class="agents-item-name">Service client</div><div class="agents-item-desc">Relances automatiques, suivis post-programme, détection précoce du décrochage.</div></div>
+          </div>
+        </div>
+
+        <div class="agents-cat">
+          <div class="agents-cat-title">Gestion &amp; contenu</div>
+          <div class="agents-cat-sub">Un seul système partagé — tu expliques une fois.</div>
+          <div class="agents-list">
+            <div><div class="agents-item-name">Finances</div><div class="agents-item-desc">Coût d'acquisition par canal, projections pipeline, alertes de rentabilité.</div></div>
+            <div><div class="agents-item-name">Formation &amp; pédagogie</div><div class="agents-item-desc">Modules, exercices et fiches récapitulatives pour renforcer l'impact de chaque cohorte.</div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="comite-quote">Ce n'est pas de la science-fiction. C'est ce que ça donne quand un système connaît vraiment une entreprise — et qu'on lui donne le temps de travailler.</div>
+    </div>
+  </div>
+</section>
+
+<div class="mention">
+  <div class="mention-box">
+    <div class="mention-eyebrow">⚠️ Note préventive</div>
+    <div class="mention-title">L'équilibre reste la boussole.</div>
+    <div class="mention-body">
+      <p>Les outils d'IA puissants — comme ce qu'on met en place ici — sont réputés pour être extrêmement stimulants. Cette stimulation est réelle, et elle est utile. Mais elle peut aussi alimenter ce qu'on appelle de plus en plus l'<em>IA burnout</em> : l'impression qu'il faut tout automatiser, tout optimiser, tout maintenant.</p>
+      <p>Ce n'est pas l'objectif. Ces outils sont là pour accélérer tes processus et améliorer la qualité de tes décisions — pas pour devenir un puits sans fond qui empiète sur ta vie en dehors du travail.</p>
+      <p>L'équilibre travail-famille reste l'objectif ultime. Si à un moment ce système alimente l'anxiété plutôt que la clarté, c'est le signal pour lever le pied — pas pour aller plus vite.</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <span class="footer-logo">momenta<span>.</span></span>
+  <span class="footer-note">Document de travail confidentiel · Mai 2026</span>
+</footer>
+
+<script>
+function tog(btn){var item=btn.closest('.acc-item');var was=item.classList.contains('open');var rect=btn.getBoundingClientRect();document.querySelectorAll('.acc-item.open').forEach(function(el){el.classList.remove('open')});if(!was)item.classList.add('open');requestAnimationFrame(function(){window.scrollBy(0,btn.getBoundingClientRect().top-rect.top);});}
+function chk(el){el.classList.toggle('on');document.getElementById('confirm').classList.toggle('show',!!document.querySelector('.ci-item.on'))}
+var burger=document.getElementById('burger'),overlay=document.getElementById('overlay');
+function closeMenu(){burger.classList.remove('open');overlay.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+burger.addEventListener('click',function(){var o=burger.classList.toggle('open');overlay.classList.toggle('open',o);burger.setAttribute('aria-expanded',o?'true':'false');document.body.style.overflow=o?'hidden':''});
+overlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var href=this.getAttribute('href');closeMenu();setTimeout(function(){var el=document.querySelector(href);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},150);});});
+</script>
+</body>
+</html>
