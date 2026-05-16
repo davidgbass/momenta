@@ -56,7 +56,7 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
 .ci{max-width:580px;margin-bottom:32px;display:flex;flex-direction:column;gap:16px}
 .ccards{display:flex;flex-direction:column;gap:12px}
 .ccard{display:flex;gap:20px;padding:18px 22px;background:var(--card);border:var(--border);border-radius:12px;align-items:flex-start}
-.ccard-tag{font-size:12px;font-weight:700;color:var(--accent);white-space:nowrap;padding-top:1px;min-width:90px}
+.ccard-tag{font-size:12px;font-weight:700;color:var(--accent);padding-top:1px;flex:0 0 130px;line-height:1.4}
 .ccard-body{font-size:14px;color:var(--text2);line-height:1.65}
 .accordion{display:flex;flex-direction:column;margin-top:36px;border:var(--border);border-radius:var(--r);overflow:hidden;background:var(--card)}
 .acc-item{border-bottom:var(--border)}
@@ -153,6 +153,8 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
   .tools-row{grid-template-columns:1fr;gap:4px;padding:14px 16px}
   .calcul{grid-template-columns:1fr}
   .footer{flex-direction:column;align-items:flex-start;gap:8px;padding:24px 20px}
+  .ccard{flex-direction:column;gap:6px}
+  .ccard-tag{flex:none}
 }
 
 .src-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0 12px}
