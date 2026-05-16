@@ -122,15 +122,14 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
 .tl{display:flex;gap:20px;padding:18px 22px;background:var(--card);border:var(--border);border-radius:12px;align-items:flex-start}
 .tl-when{font-size:12px;font-weight:700;color:var(--accent);white-space:nowrap;padding-top:1px;min-width:100px}
 .tl-what{font-size:14px;color:var(--text2);line-height:1.65}
-.mention{padding:48px 0 40px}
+.mention{padding:52px 0;background:#b03218}
 .mention-box{max-width:var(--max);margin:0 auto;padding:0 48px}
-.mention-inner{padding:32px 36px;border:1px solid rgba(255,255,255,.15);border-left:3px solid rgba(255,255,255,.3);border-radius:var(--r);background:rgba(255,255,255,.03)}
-.mention-eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px}
-.mention-title{font-family:'Fraunces',Georgia,serif;font-size:1.1rem;font-weight:300;color:rgba(255,255,255,.6);margin-bottom:16px;letter-spacing:-.01em}
-.mention-body{font-size:13.5px;color:rgba(255,255,255,.4);line-height:1.8}
-.mention-body p+p{margin-top:12px}
-.mention-body em{font-style:italic;color:rgba(255,255,255,.5)}
-@media(max-width:767px){.mention-box{padding:0 20px}.mention-inner{padding:22px 20px}}
+.mention-eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:14px}
+.mention-title{font-family:'Fraunces',Georgia,serif;font-size:1.5rem;font-weight:300;color:#fff;margin-bottom:22px;letter-spacing:-.02em}
+.mention-body{font-size:15px;color:rgba(255,255,255,.92);line-height:1.85;max-width:640px}
+.mention-body p+p{margin-top:16px}
+.mention-body em{font-style:italic;color:#fff;font-weight:500}
+@media(max-width:767px){.mention-box{padding:0 20px}.mention{padding:40px 0}}
 .footer{border-top:var(--border);padding:28px 48px;display:flex;align-items:center;justify-content:space-between}
 .footer-logo{font-weight:600;font-size:14px;color:var(--text)}
 .footer-logo span{color:var(--accent)}
@@ -170,10 +169,11 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
 .comite-card h4{font-size:13px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
 .comite-card p{font-size:13.5px;color:var(--text2);line-height:1.65}
 .comite-quote{padding:28px 36px;border-left:3px solid var(--accent);font-size:15px;color:var(--text2);line-height:1.75;font-style:italic}
-.agents-intro{font-size:15px;color:var(--text2);line-height:1.75;margin:36px 0 24px}
+.agents-intro{font-size:14px;color:var(--text2);line-height:1.75;margin:28px 0 16px}
 .agents-cats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:36px}
 .agents-cat{padding:24px 26px;background:rgba(255,255,255,.05);border:var(--border);border-radius:12px}
-.agents-cat-title{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.09em;margin-bottom:16px}
+.agents-cat-title{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.09em;margin-bottom:6px}
+.agents-cat-sub{font-size:12px;color:var(--text3);font-style:italic;margin-bottom:16px;line-height:1.5}
 .agents-list{display:flex;flex-direction:column;gap:12px}
 .agents-item-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px}
 .agents-item-desc{font-size:13px;color:var(--text2);line-height:1.55}
@@ -492,31 +492,13 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
     <div class="eyebrow">L'étape ultime</div>
     <h2 class="h2">Maturité du système : le comité aviseur.</h2>
     <div class="comite">
-      <p class="comite-lead">Imagine avoir accès, à tout moment, à un comité qui connaît Momenta mieux que n'importe quel consultant externe — et qui travaille pendant que tu dors.</p>
-      <p class="sub" style="margin-bottom:28px">Ce n'est pas un outil qui répond quand tu poses une question. C'est un <strong>comité aviseur actif</strong> — plusieurs agents spécialisés, chacun avec un rôle précis, qui ont tous accès à la même connaissance complète de Momenta : tes données, ton historique, tes décisions, tes campagnes, ton pipeline, ta voix.</p>
-      <div class="comite-cards">
-        <div class="comite-card">
-          <h4>La nuit</h4>
-          <p>Analyse des signaux de la semaine, détection d'opportunités dans tes dormantes, préparation des décisions que tu devras prendre — avec le contexte réel de Momenta, pas des opinions génériques.</p>
-        </div>
-        <div class="comite-card">
-          <h4>Le matin</h4>
-          <p>Tu n'arrives pas à zéro. Un briefing t'attend : qui a bougé, quoi faire en premier, quelle décision prendre, avec quel angle. Le comité a déjà fait le travail de nuit.</p>
-        </div>
-        <div class="comite-card">
-          <h4>Chaque décision</h4>
-          <p>Lancer une nouvelle cohorte, ajuster ton offre B2B, décider qui relancer en priorité — chaque choix est éclairé par un système qui a tout vu, tout retenu, et qui t'offre le meilleur angle possible.</p>
-        </div>
-        <div class="comite-card">
-          <h4>Toujours informée</h4>
-          <p>Tous les agents partagent la même connaissance de Momenta. Pas de silos. Pas de répétition. Tu expliques une fois — le système retient pour tout le monde.</p>
-        </div>
-      </div>
-      <p class="agents-intro">Voici les spécialistes du comité — chacun formé sur la réalité de Momenta, disponible à la demande ou actif en tâche de fond.</p>
+      <p class="comite-lead">Un comité qui connaît Momenta mieux que n'importe quel consultant externe — et qui travaille pendant que tu dors. La nuit il analyse, le matin le briefing est prêt, et chaque décision est éclairée par le même système. Tu expliques une fois — il retient pour tout le monde.</p>
+      <p class="agents-intro">Les spécialistes du comité — chacun formé sur la réalité de Momenta :</p>
       <div class="agents-cats">
 
         <div class="agents-cat">
           <div class="agents-cat-title">Croissance &amp; visibilité</div>
+          <div class="agents-cat-sub">Actif la nuit — résultats prêts le matin.</div>
           <div class="agents-list">
             <div><div class="agents-item-name">SEO</div><div class="agents-item-desc">Mots-clés DRH, optimisation pages de programme, trafic organique sans budget pub.</div></div>
             <div><div class="agents-item-name">Analytics</div><div class="agents-item-desc">Isole ce qui convertit vs ce qui brûle du budget sur Meta, LinkedIn et GHL.</div></div>
@@ -526,6 +508,7 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
 
         <div class="agents-cat">
           <div class="agents-cat-title">Ventes &amp; B2B</div>
+          <div class="agents-cat-sub">Éclaire chaque décision avec le contexte réel de Momenta.</div>
           <div class="agents-list">
             <div><div class="agents-item-name">Stratégie</div><div class="agents-item-desc">Croise GHL + signaux d'engagement pour savoir qui relancer, quand, et avec quel angle.</div></div>
             <div><div class="agents-item-name">Ressources humaines</div><div class="agents-item-desc">ROI par secteur (juridique, manufacture, santé), pitch adapté au profil DRH, rapports sur mesure.</div></div>
@@ -535,6 +518,7 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
 
         <div class="agents-cat">
           <div class="agents-cat-title">Communication</div>
+          <div class="agents-cat-sub">Tu n'arrives jamais à zéro — le briefing est déjà prêt.</div>
           <div class="agents-list">
             <div><div class="agents-item-name">Copywriting</div><div class="agents-item-desc">Séquences, pages de vente, pitchs dans ta voix — registre adapté à chaque cible.</div></div>
             <div><div class="agents-item-name">Service client</div><div class="agents-item-desc">Relances automatiques, suivis post-programme, détection précoce du décrochage.</div></div>
@@ -543,6 +527,7 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
 
         <div class="agents-cat">
           <div class="agents-cat-title">Gestion &amp; contenu</div>
+          <div class="agents-cat-sub">Un seul système partagé — tu expliques une fois.</div>
           <div class="agents-list">
             <div><div class="agents-item-name">Finances</div><div class="agents-item-desc">Coût d'acquisition par canal, projections pipeline, alertes de rentabilité.</div></div>
             <div><div class="agents-item-name">Formation &amp; pédagogie</div><div class="agents-item-desc">Modules, exercices et fiches récapitulatives pour renforcer l'impact de chaque cohorte.</div></div>
@@ -557,14 +542,12 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
 
 <div class="mention">
   <div class="mention-box">
-    <div class="mention-inner">
-      <div class="mention-eyebrow">Note préventive</div>
-      <div class="mention-title">L'équilibre reste la boussole.</div>
-      <div class="mention-body">
-        <p>Les outils d'IA puissants — comme ce qu'on met en place ici — sont réputés pour être extrêmement stimulants. Cette stimulation est réelle, et elle est utile. Mais elle peut aussi alimenter ce qu'on appelle de plus en plus l'<em>IA burnout</em> : l'impression qu'il faut tout automatiser, tout optimiser, tout maintenant.</p>
-        <p>Ce n'est pas l'objectif. Ces outils sont là pour accélérer tes processus et améliorer la qualité de tes décisions — pas pour devenir un puits sans fond qui empiète sur ta vie en dehors du travail.</p>
-        <p>L'équilibre travail-famille reste l'objectif ultime. Si à un moment ce système alimente l'anxiété plutôt que la clarté, c'est le signal pour lever le pied — pas pour aller plus vite.</p>
-      </div>
+    <div class="mention-eyebrow">⚠️ Note préventive</div>
+    <div class="mention-title">L'équilibre reste la boussole.</div>
+    <div class="mention-body">
+      <p>Les outils d'IA puissants — comme ce qu'on met en place ici — sont réputés pour être extrêmement stimulants. Cette stimulation est réelle, et elle est utile. Mais elle peut aussi alimenter ce qu'on appelle de plus en plus l'<em>IA burnout</em> : l'impression qu'il faut tout automatiser, tout optimiser, tout maintenant.</p>
+      <p>Ce n'est pas l'objectif. Ces outils sont là pour accélérer tes processus et améliorer la qualité de tes décisions — pas pour devenir un puits sans fond qui empiète sur ta vie en dehors du travail.</p>
+      <p>L'équilibre travail-famille reste l'objectif ultime. Si à un moment ce système alimente l'anxiété plutôt que la clarté, c'est le signal pour lever le pied — pas pour aller plus vite.</p>
     </div>
   </div>
 </div>
