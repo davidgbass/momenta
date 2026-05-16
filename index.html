@@ -612,7 +612,7 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
 </footer>
 
 <script>
-function tog(btn){var item=btn.closest('.acc-item');var was=item.classList.contains('open');document.querySelectorAll('.acc-item.open').forEach(function(el){el.classList.remove('open')});if(!was)item.classList.add('open')}
+function tog(btn){var item=btn.closest('.acc-item');var was=item.classList.contains('open');var rect=btn.getBoundingClientRect();document.querySelectorAll('.acc-item.open').forEach(function(el){el.classList.remove('open')});if(!was)item.classList.add('open');requestAnimationFrame(function(){window.scrollBy(0,btn.getBoundingClientRect().top-rect.top);});}
 function chk(el){el.classList.toggle('on');document.getElementById('confirm').classList.toggle('show',!!document.querySelector('.ci-item.on'))}
 var burger=document.getElementById('burger'),overlay=document.getElementById('overlay');
 function closeMenu(){burger.classList.remove('open');overlay.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow=''}
