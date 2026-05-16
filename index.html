@@ -598,9 +598,9 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
 function tog(btn){var item=btn.closest('.acc-item');var was=item.classList.contains('open');document.querySelectorAll('.acc-item.open').forEach(function(el){el.classList.remove('open')});if(!was)item.classList.add('open')}
 function chk(el){el.classList.toggle('on');document.getElementById('confirm').classList.toggle('show',!!document.querySelector('.ci-item.on'))}
 var burger=document.getElementById('burger'),overlay=document.getElementById('overlay');
-function closeMenu(){burger.classList.remove('open');overlay.classList.remove('open');burger.setAttribute('aria-expanded','false')}
-burger.addEventListener('click',function(){var o=burger.classList.toggle('open');overlay.classList.toggle('open',o);burger.setAttribute('aria-expanded',o?'true':'false')});
-overlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+function closeMenu(){burger.classList.remove('open');overlay.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+burger.addEventListener('click',function(){var o=burger.classList.toggle('open');overlay.classList.toggle('open',o);burger.setAttribute('aria-expanded',o?'true':'false');document.body.style.overflow=o?'hidden':''});
+overlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var href=this.getAttribute('href');closeMenu();setTimeout(function(){var el=document.querySelector(href);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},150);});});
 </script>
 </body>
 </html>
