@@ -142,6 +142,22 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
   .calcul{grid-template-columns:1fr}
   .footer{flex-direction:column;align-items:flex-start;gap:8px;padding:24px 20px}
 }
+
+.future{display:flex;flex-direction:column;gap:32px;margin-top:40px}
+.future-card{padding:36px 40px;background:var(--card);border:var(--border);border-radius:var(--r);position:relative;overflow:hidden}
+.future-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
+.future-card h3{font-family:'Fraunces',Georgia,serif;font-size:1.4rem;font-weight:300;letter-spacing:-.02em;color:var(--text);margin-bottom:12px}
+.future-card p{font-size:14px;color:var(--text2);line-height:1.75}
+.future-gate{margin-top:48px;padding:32px 40px;border:1px solid rgba(245,143,128,.35);border-radius:var(--r);background:rgba(245,143,128,.06)}
+.future-gate p{font-size:15px;color:var(--text2);line-height:1.75;font-style:italic}
+.comite{margin-top:40px}
+.comite-lead{font-size:17px;color:var(--text2);line-height:1.75;margin-bottom:32px;max-width:580px}
+.comite-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
+.comite-card{padding:24px 28px;background:var(--card);border:var(--border);border-radius:12px}
+.comite-card h4{font-size:13px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.comite-card p{font-size:13.5px;color:var(--text2);line-height:1.65}
+.comite-quote{padding:28px 36px;border-left:3px solid var(--accent);font-size:15px;color:var(--text2);line-height:1.75;font-style:italic}
+@media(max-width:767px){.future-card,.future-gate{padding:24px 20px}.comite-cards{grid-template-columns:1fr}.comite-card{padding:20px}.comite-quote{padding:20px 24px}}
 </style>
 </head>
 <body>
@@ -152,6 +168,7 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
     <a href="#probleme">Problème</a>
     <a href="#etapes">Étapes</a>
     <a href="#outils">Outils</a>
+    <a href="#futur">Ce qui s'ouvre</a>
     <a href="#approbation">Approbation</a>
     <span class="nav-badge">Mai 2026</span>
   </div>
@@ -164,6 +181,7 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
   <a href="#probleme">Problème</a>
   <a href="#etapes">Étapes</a>
   <a href="#outils">Outils</a>
+  <a href="#futur">Ce qui s'ouvre</a>
   <a href="#approbation">Approbation</a>
 </div>
 
@@ -187,11 +205,11 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
     <h2 class="h2">Ce qui coûte ton temps en ce moment.</h2>
     <p class="sub">Tu as déjà trouvé des raccourcis. Le problème, c'est qu'ils ne s'améliorent pas avec le temps.</p>
     <div class="problems">
-      <div class="prob"><div class="prob-tag">01</div><div><div class="prob-title">ChatGPT comme outil de dictée</div><div class="prob-desc">Gain de temps initial, mais il ne connaît pas Momenta, ne retient rien d'une session à l'autre, et ne s'améliore pas au fil de tes réponses. Le gain reste le même — il ne compose pas.</div></div></div>
+      <div class="prob"><div class="prob-tag">01</div><div><div class="prob-title">Les outils IA sans mémoire</div><div class="prob-desc">Tu obtiens un gain de temps ponctuel, mais le système ne connaît pas Momenta, ne retient rien d'une session à l'autre, et ne s'améliore pas au fil de tes réponses. Le gain reste le même — il ne compose pas.</div></div></div>
       <div class="prob"><div class="prob-tag">02</div><div><div class="prob-title">La création de contenu est laborieuse</div><div class="prob-desc">Pas surtout à la production, mais en amont — trouver l'idée, décider de l'angle, savoir quoi dire cette semaine. C'est là que le temps disparaît.</div></div></div>
       <div class="prob"><div class="prob-tag">03</div><div><div class="prob-title">Les 1 400 dormants sont prêts à être relancés</div><div class="prob-desc">Mais la stratégie pour le faire est encore floue. Ce n'est pas un manque de volonté, c'est un manque de clarté sur qui, avec quel angle, dans quel ordre.</div></div></div>
       <div class="prob"><div class="prob-tag">04</div><div><div class="prob-title">Le B2B manque de temps dédié</div><div class="prob-desc">Pas parce que tu ne veux pas — parce que les courriels et le contenu gobent les heures disponibles avant que tu y arrives.</div></div></div>
-      <div class="prob"><div class="prob-tag">05</div><div><div class="prob-title">Ce que tu sais sur Momenta est éparpillé</div><div class="prob-desc">ChatGPT, GHL, Excel, ta mémoire. Aucun de ces endroits ne se parle. Tu es la seule interface entre tous.</div></div></div>
+      <div class="prob"><div class="prob-tag">05</div><div><div class="prob-title">Ce que tu sais sur Momenta est éparpillé</div><div class="prob-desc">GHL, Excel, ta mémoire, tes outils IA. Aucun de ces endroits ne se parle. Tu es la seule interface entre tous.</div></div></div>
     </div>
     <div class="prob-note">Ce n'est pas un problème de discipline. C'est un problème de <strong>mémoire systémique</strong>.</div>
   </div>
@@ -235,7 +253,6 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
             <li>Tout ton <strong>GHL</strong> : les 1 400 dormants segmentés, les 42 participantes, le pipeline B2B, les taux d'ouverture</li>
             <li>Ton <strong>brand kit</strong> (couleurs, polices, logo — ingéré une fois, réutilisé partout)</li>
             <li>Tes <strong>pitch decks</strong> B2C et B2B</li>
-            <li>Tes <strong>2 derniers mois de conversations ChatGPT</strong> — tout ce que tu as construit avec l'IA devient mémoire permanente du wiki, sans que tu aies à tout réécrire</li>
           </ul>
           <p>Et on fait une <strong>entrevue d'1 heure</strong> : Claude te pose des questions sur l'histoire de Momenta, ta stratégie, tes cibles, tes arguments, ce qui convainc et ce qui ne convainc jamais. C'est la mémoire à long terme du système.</p>
           <div class="acc-note">Résultat : tu peux demander <em>« Parmi mes 1 400 dormants, qui a participé au webinaire sur la charge mentale ET travaille dans le secteur juridique ? »</em> — réponse en 30 secondes.</div>
@@ -330,12 +347,12 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
           <p>Ton pitch B2B et ton one-pager Momenta sur une URL propre. Tu envoies un lien — pas une pièce jointe PDF.</p>
           <div class="acc-steps">
             <div class="acc-step"><div class="acc-sn">1</div>Un compte GitHub Momenta est créé (gratuit, 5 min)</div>
-            <div class="acc-step"><div class="acc-sn">2</div>David convertit tes pitch decks en pages web responsives — s'affiche parfaitement sur iPhone et desktop, aux couleurs Momenta</div>
+            <div class="acc-step"><div class="acc-sn">2</div>Tu fournis ton pitch deck en PDF — un skill Claude le convertit automatiquement en page web responsive, aux couleurs Momenta, sans intervention manuelle</div>
             <div class="acc-step"><div class="acc-sn">3</div>Tu reçois deux URLs : <code>momenta-mc.github.io/essor/</code> pour les DRH, <code>momenta-mc.github.io/pitch/</code> pour le grand public</div>
             <div class="acc-step"><div class="acc-sn">4</div>Tu valides sur ton téléphone → c'est prêt à partager</div>
           </div>
           <div class="acc-note">La DRH ouvre ton lien sur son téléphone pendant le meeting. Elle ne télécharge rien, elle n'a pas besoin d'un compte. Si tu mets à jour ton offre, le lien est automatiquement à jour — sans renvoyer de fichier.</div>
-          <div class="acc-comment">Ce que ça te coûte : 30 minutes pour valider. David s'occupe du reste. Hébergement : 0 $.</div>
+          <div class="acc-comment">Ce que ça te coûte : 30 minutes pour valider. Le skill s'occupe du reste. Hébergement : 0 $.</div>
         </div>
       </div>
 
@@ -394,7 +411,7 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
 
     <div class="cg-lbl">Session Vague 2</div>
     <div class="checks">
-      <div class="ci-item" onclick="chk(this)"><div class="ci-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="ci-title">Je bloque une demi-journée pour la session Vague 2.</div><div class="ci-desc">Exporter données Meta Ads + LinkedIn Analytics (CSV), brand kit Canva, pitch decks B2C + B2B en PDF, conversations ChatGPT exportées (Settings → Data controls → Export data).</div></div></div>
+      <div class="ci-item" onclick="chk(this)"><div class="ci-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="ci-title">Je bloque une demi-journée pour la session Vague 2.</div><div class="ci-desc">Exporter données Meta Ads + LinkedIn Analytics (CSV), brand kit Canva, pitch decks B2C + B2B en PDF.</div></div></div>
     </div>
 
     <div class="cg-lbl">Étapes à venir — David s'en charge</div>
@@ -416,6 +433,66 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
       <div class="tl"><div class="tl-when">Dans 2 semaines</div><div class="tl-what">Tes courriels prennent 30 secondes. Tu n'expliques plus Momenta à chaque fois.</div></div>
       <div class="tl"><div class="tl-when">Dans 1 mois</div><div class="tl-what">Ton contenu de la semaine est produit le lundi matin. Tu sais exactement quels segments de tes dormants relancer et avec quel angle. Ton pitch B2B est en ligne — tu envoies un lien au lieu d'une pièce jointe.</div></div>
       <div class="tl"><div class="tl-when">Dans 3 mois</div><div class="tl-what">Chaque réunion B2B nourrit automatiquement le système. Tu rentres d'un appel, les tâches sont déjà dans le wiki.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="futur">
+  <div class="wrap">
+    <div class="eyebrow">Ce qui s'ouvre après la maturité</div>
+    <h2 class="h2">Quand le système a eu le temps d'apprendre.</h2>
+    <p class="sub" style="max-width:560px">La plupart des outils IA font la même chose au mois 1 qu'au mois 6. Ce système, non. À partir de 3–4 mois d'utilisation, un seuil se franchit. Ce n'est plus de l'accélération — c'est une transformation.</p>
+    <div class="future">
+      <div class="future-card">
+        <h3>Le système sait qui va convertir avant que tu l'aies contacté.</h3>
+        <p>Qui ouvre deux courriels sur trois, qui a visité la page programme trois fois cette semaine, qui a répondu à un post LinkedIn et cliqué sur le lien. Le système croise ces signaux et te donne chaque lundi une liste des 5 personnes à qui écrire. Pas par intuition — par reconnaissance de patterns que tu ne pourrais pas voir toi-même.</p>
+      </div>
+      <div class="future-card">
+        <h3>Tes dormants se relancent avec un angle personnalisé pour chaque segment.</h3>
+        <p>Les DRH du juridique → argument rétention. Les gestionnaires en manufac → coût de l'absentéisme. Les anciennes participantes B2C → vecteur de référencement B2B. Le système génère les batches dans ta voix, avec les bons arguments, au bon moment.</p>
+      </div>
+      <div class="future-card">
+        <h3>Tu sais ce que le mois prochain va rapporter.</h3>
+        <p>Après chaque réunion B2B, le pipeline se met à jour. Le système lit les signaux — deuxième contact, demande de proposition, silence après deux relances — et te donne une probabilité de conversion et une projection de revenu. Pas de l'optimisme. De la data.</p>
+      </div>
+      <div class="future-card">
+        <h3>Ton contenu devient auto-apprenant.</h3>
+        <p>Le système sait ce qui performe sur LinkedIn vs IG, quel angle génère des DM, quel format convertit pour les prospects B2B. Il ajuste les angles de la semaine automatiquement — le lundi matin, le brief tient déjà compte de la semaine précédente.</p>
+      </div>
+    </div>
+    <div class="future-gate">
+      <p>Tout ça ne s'installe pas. Ça se gagne — par le temps passé à nourrir le système et à le laisser observer Momenta. C'est pourquoi on commence maintenant.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Le comité aviseur</div>
+    <h2 class="h2">Claude ne dort pas.</h2>
+    <div class="comite">
+      <p class="comite-lead">Imagine avoir accès, à tout moment, à un comité qui connaît Momenta mieux que n'importe quel consultant externe — et qui travaille pendant que tu dors.</p>
+      <p class="sub" style="margin-bottom:28px">Ce n'est pas un outil qui répond quand tu poses une question. C'est un <strong>comité aviseur actif</strong> — plusieurs agents spécialisés, chacun avec un rôle précis, qui ont tous accès à la même connaissance complète de Momenta : tes données, ton historique, tes décisions, tes campagnes, ton pipeline, ta voix.</p>
+      <div class="comite-cards">
+        <div class="comite-card">
+          <h4>La nuit</h4>
+          <p>Analyse des signaux de la semaine, détection d'opportunités dans tes dormants, préparation des décisions que tu devras prendre — avec le contexte réel de Momenta, pas des opinions génériques.</p>
+        </div>
+        <div class="comite-card">
+          <h4>Le matin</h4>
+          <p>Tu n'arrives pas à zéro. Un briefing t'attend : qui a bougé, quoi faire en premier, quelle décision prendre, avec quel angle. Le comité a déjà fait le travail de nuit.</p>
+        </div>
+        <div class="comite-card">
+          <h4>Chaque décision</h4>
+          <p>Lancer une nouvelle cohorte, ajuster ton offre B2B, décider qui relancer en priorité — chaque choix est éclairé par un système qui a tout vu, tout retenu, et qui t'offre le meilleur angle possible.</p>
+        </div>
+        <div class="comite-card">
+          <h4>Toujours informé</h4>
+          <p>Tous les agents partagent la même connaissance de Momenta. Pas de silos. Pas de répétition. Tu expliques une fois — le système retient pour tout le monde.</p>
+        </div>
+      </div>
+      <div class="comite-quote">Ce n'est pas de la science-fiction. C'est ce que ça donne quand un système connaît vraiment une entreprise — et qu'on lui donne le temps de travailler.</div>
     </div>
   </div>
 </section>
