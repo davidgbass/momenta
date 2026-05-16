@@ -155,6 +155,12 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
   .footer{flex-direction:column;align-items:flex-start;gap:8px;padding:24px 20px}
 }
 
+.src-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0 12px}
+.src-block{padding:14px 16px;background:rgba(255,255,255,.05);border:var(--border);border-radius:10px}
+.src-interview{padding:16px 18px;background:rgba(245,143,128,.07);border:1px solid rgba(245,143,128,.2);border-radius:10px;margin-bottom:20px}
+.src-label{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.src-desc{font-size:13px;color:var(--text2);line-height:1.6}
+@media(max-width:767px){.src-grid{grid-template-columns:1fr;gap:8px}.src-block,.src-interview{padding:14px 16px}}
 .mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
 .mission-card{padding:32px 36px;background:var(--card);border:var(--border);border-radius:var(--r);position:relative}
 .mission-card--accent{background:rgba(245,143,128,.08);border-color:rgba(245,143,128,.25)}
@@ -297,13 +303,24 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
         </button>
         <div class="acc-body">
           <p>Un <strong>Projet Claude dédié</strong> — "Momenta · Cerveau Central" — toujours actif, toujours en contexte. Tous les autres outils du système s'y connectent.</p>
-          <p>Ce qu'on charge dans ce projet :</p>
-          <ul>
-            <li><strong>GHL export complet</strong> : les 1 400 dormantes segmentées, les 42 participantes, le pipeline B2B, les taux d'ouverture par séquence</li>
-            <li><strong>Meta Ads + LinkedIn Analytics</strong> en CSV : résultats par campagne, coût par conversion, profils qui ont converti</li>
-            <li><strong>Pitch decks B2C + B2B</strong> en PDF et <strong>brand kit</strong> Momenta (couleurs, polices, logo)</li>
-          </ul>
-          <p>Puis une <strong>entrevue structurée d'1h</strong> : Claude pose les questions, tu réponds à voix haute (Superwhisper transcrit). Stratégie, cibles, objections réelles, ce qui convainc, ce qui ne convainc jamais. Ce document devient l'ADN du système — la référence que tous les agents consultent.</p>
+          <div class="src-grid">
+            <div class="src-block">
+              <div class="src-label">GHL</div>
+              <div class="src-desc">1 400 dormantes segmentées, 42 participantes, pipeline B2B, taux d'ouverture par séquence</div>
+            </div>
+            <div class="src-block">
+              <div class="src-label">Meta Ads · LinkedIn</div>
+              <div class="src-desc">Résultats par campagne, coût par conversion, profils qui ont converti</div>
+            </div>
+            <div class="src-block">
+              <div class="src-label">Pitch decks · Brand kit</div>
+              <div class="src-desc">B2C + B2B en PDF, couleurs, polices, logo Momenta</div>
+            </div>
+          </div>
+          <div class="src-interview">
+            <div class="src-label">Entrevue ADN — 1h</div>
+            <div class="src-desc">Claude pose les questions, tu réponds à voix haute (Superwhisper transcrit). Stratégie, cibles, objections réelles, ce qui convainc, ce qui ne convainc jamais. Ce document devient la référence que tous les agents consultent.</div>
+          </div>
           <div class="acc-note">Résultat concret : <em>« Parmi mes 1 400 dormantes, qui a participé au webinaire sur la charge mentale ET travaille dans le secteur juridique ? »</em> — réponse en 30 secondes.</div>
         </div>
       </div>
