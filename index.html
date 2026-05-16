@@ -155,6 +155,16 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
   .footer{flex-direction:column;align-items:flex-start;gap:8px;padding:24px 20px}
 }
 
+.mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.mission-card{padding:32px 36px;background:var(--card);border:var(--border);border-radius:var(--r);position:relative}
+.mission-card--accent{background:rgba(245,143,128,.08);border-color:rgba(245,143,128,.25)}
+.mission-num{font-family:'Fraunces',serif;font-size:36px;font-weight:300;color:rgba(255,255,255,.12);line-height:1;margin-bottom:16px}
+.mission-card--accent .mission-num{color:rgba(245,143,128,.3)}
+.mission-title{font-size:17px;font-weight:600;color:var(--text);margin-bottom:14px;line-height:1.3}
+.mission-card--accent .mission-title{color:var(--accent)}
+.mission-body{font-size:14px;color:var(--text2);line-height:1.75}
+.mission-note{font-size:15px;color:var(--text2);line-height:1.7;padding:20px 24px;border-left:3px solid var(--accent);font-style:italic}
+@media(max-width:767px){.mission-grid{grid-template-columns:1fr}.mission-card{padding:24px 20px}}
 .future{display:flex;flex-direction:column;gap:32px;margin-top:40px}
 .future-card{padding:36px 40px;background:var(--card);border:var(--border);border-radius:var(--r);position:relative;overflow:hidden}
 .future-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
@@ -247,6 +257,27 @@ h2.h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);
       <div class="ccard"><div class="ccard-tag">Le principe</div><div class="ccard-body"><strong>Ça compound.</strong> Plus le système est nourri, plus il est précis. Une relance générée avec 3 mois de données vaut dix fois plus qu'une relance générée sur des suppositions. Un pitch B2B calibré sur les vraies objections entendues bat n'importe quel template générique.</div></div>
       <div class="ccard"><div class="ccard-tag">Ton rôle</div><div class="ccard-body">Tu restes la source. Le système amplifie. L'IA accélère les processus — mais <strong>pleinement ancrée dans la réalité de Momenta</strong>, pas sur des généralités. Sa connaissance est alignée sur tes données réelles : pas d'hallucinations, pas d'inférences flatteuses, pas de complaisance. Tu as un système objectif qui challenge tes décisions — pas un outil qui te dit ce que tu veux entendre.</div></div>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">La double mission</div>
+    <h2 class="h2">Tu es la stratège. Le système opère.</h2>
+    <p class="sub" style="max-width:560px;margin-bottom:32px">Deux objectifs à tenir en équilibre — l'un libère ton temps, l'autre élève tes décisions.</p>
+    <div class="mission-grid">
+      <div class="mission-card">
+        <div class="mission-num">01</div>
+        <h3 class="mission-title">Automatiser pour libérer</h3>
+        <p class="mission-body">Déléguer au système ce qui ne requiert pas ton jugement : courriels routiniers, production de contenu, suivis, relances. Chaque opération confiée au système est une heure récupérée pour ce qui a de la valeur — la stratégie, les relations, la vente directe.</p>
+      </div>
+      <div class="mission-card mission-card--accent">
+        <div class="mission-num">02</div>
+        <h3 class="mission-title">Décider avec plus d'intelligence</h3>
+        <p class="mission-body">Un système bien nourri ne se contente pas d'exécuter — il analyse, détecte, projette. L'objectif va au-delà du gain de temps : augmenter la qualité de chaque décision stratégique pour maximiser les revenus. Quel segment cibler. Quel angle adopter. Où concentrer l'énergie.</p>
+      </div>
+    </div>
+    <div class="mission-note">L'équilibre entre ces deux objectifs, c'est ce qui transforme un outil IA en véritable levier de croissance pour Momenta.</div>
   </div>
 </section>
 
